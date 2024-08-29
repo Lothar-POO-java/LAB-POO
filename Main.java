@@ -1,25 +1,25 @@
-package LABORATORIO01;
+package LABORATORIO02;
 
 public class Main {
     public static void main(String[] args) {
-        // Testing the BankAccount class
-        BankAccount myAccount = new BankAccount("John Doe", "123456789", 500.0);
-        myAccount.deposit(150.0);
-        myAccount.withdraw(200.0);
-        System.out.println("Current balance: " + myAccount.checkBalance());
+        // Testing Person class
+        Person person = new Person("John", 25, "john@example.com");
+        System.out.println("Name: " + person.getName());
+        person.setAge(26);
+        System.out.println("Updated Age: " + person.getAge());
 
-        // Testing the Calculator class
-        Calculator calc = new Calculator();
-        System.out.println("Sum: " + calc.add(5, 10));
-        System.out.println("Subtraction: " + calc.subtract(20, 5));
-        System.out.println("Multiplication: " + calc.multiply(3, 4));
-        System.out.println("Division: " + calc.divide(10, 2));
-        System.out.println("Division by zero: " + calc.divide(10, 0));
+        // Testing BankAccount class
+        BankAccount account = new BankAccount("12345", 1000.0, "John Doe");
+        account.deposit(500.0);
+        account.withdraw(200.0);
+        System.out.println("Balance: " + account.getBalance());
 
-        // Testing the Employee class
-        Employee emp = new Employee("Jane Smith", 75000, "HR");
-        System.out.println("Employee Name: " + emp.getName());
-        emp.setSalary(80000);
-        System.out.println("Updated Salary: " + emp.getSalary());
+        // Testing Circle class
+        Circle circle = new Circle(5);
+        System.out.println("Circle Area: " + circle.calculateArea());
+
+        // Testing Utilities class
+        double fahrenheit = Utilities.convertCelsiusToFahrenheit(25);
+        System.out.println("25°C in Fahrenheit: " + fahrenheit);
     }
 }

@@ -1,18 +1,17 @@
-package LABORATORIO01;
+package LABORATORIO02;
 
-// Part 1 and 2: BankAccount Class
+// Part 2: BankAccount Class
 
 public class BankAccount {
-    // Attributes for account holder, account number, and balance
-    private String accountHolder;
-    private String accountNumber;
+    public String accountNumber;
     private double balance;
+    protected String accountHolder;
 
-    // Constructor to initialize attributes
-    public BankAccount(String accountHolder, String accountNumber, double balance) {
-        this.accountHolder = accountHolder;
+    // Constructor
+    BankAccount(String accountNumber, double balance, String accountHolder) {
         this.accountNumber = accountNumber;
         this.balance = balance;
+        this.accountHolder = accountHolder;
     }
 
     // Method to deposit money
@@ -22,7 +21,7 @@ public class BankAccount {
         }
     }
 
-    // Method to withdraw money
+    // Method to withdraw money ensuring balance doesn't go negative
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
@@ -31,8 +30,8 @@ public class BankAccount {
         }
     }
 
-    // Method to check the balance
-    public double checkBalance() {
+    // Method to check balance
+    public double getBalance() {
         return balance;
     }
 }
